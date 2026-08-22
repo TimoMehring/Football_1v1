@@ -1,4 +1,6 @@
 #include "raylib.h"
+#include "state.h"
+#include "graphics.h"
 
 int main(void)
 {
@@ -7,16 +9,30 @@ int main(void)
 
     InitWindow(screenWidth, screenHeight, "Football 1v1");
 
-    SetTargetFPS(60);              
+    SetTargetFPS(60);    
+    
+    State currentState = State::Startscreen;
 
     while (!WindowShouldClose())    
     {
+        if(currentState == State::Startscreen){
+            UpdateStartscreen(currentState);
+        }
 
         BeginDrawing();
 
-            ClearBackground(GREEN);
+        ClearBackground(ORANGE);
 
-            DrawText("Projekt Start!", 190, 200, 20, LIGHTGRAY);
+        if(currentState == State::Startscreen){
+            DrawStartscreen();
+        }
+        else if(currentState == State::CharSelection){
+            DrawCharSelection();
+        }
+
+
+
+           
 
         EndDrawing();
         
