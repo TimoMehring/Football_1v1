@@ -13,6 +13,8 @@ int main(void)
     SetTargetFPS(60); 
     
     Graphics graphics = LoadGraphics();
+
+    std::vector<Character> characters = LoadCharacters(graphics);
     
     State currentState = State::Startscreen;
 
@@ -34,7 +36,7 @@ int main(void)
                 break;
 
             case State::CharSelection:
-                DrawCharSelection(graphics);
+                DrawCharSelection(graphics,characters);
                 break;
         }
 

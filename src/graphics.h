@@ -1,5 +1,6 @@
 #pragma once
 #include "raylib.h"
+#include <vector>
 
 struct Graphics{
     Texture2D locked_select;
@@ -17,6 +18,6 @@ struct Graphics{
 
 Graphics LoadGraphics();
 void DrawStartscreen();
-void DrawCharSelection(Graphics graphics);
+//void DrawCharSelection(Graphics graphics, std::vector<Character>& characters);
 
 void UnlaodGraphics(Graphics& Graphics);
