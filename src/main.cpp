@@ -1,11 +1,12 @@
 #include "raylib.h"
 #include "state.h"
 #include "graphics.h"
+#include "character.h"
 
 int main(void)
 {
-    const int screenWidth = 800;
-    const int screenHeight = 450;
+    const int screenWidth = 1200;
+    const int screenHeight = 800;
 
     InitWindow(screenWidth, screenHeight, "Football 1v1");
 
@@ -33,7 +34,7 @@ int main(void)
                 break;
 
             case State::CharSelection:
-                DrawCharSelection();
+                DrawCharSelection(graphics);
                 break;
         }
 
