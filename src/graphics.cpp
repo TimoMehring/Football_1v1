@@ -37,17 +37,3 @@ void UnlaodGraphics(Graphics& graphics){
 void DrawStartscreen(){
     ClearBackground(GREEN);
 }
-
-/* void DrawCharSelection(Graphics graphics){
-    ClearBackground(BLUE);
-    DrawTextureEx(graphics.frog_001_select,{100.0f, 120.0f},0.0f,7.0f,WHITE);
-    DrawTextureEx(graphics.frog_002_select,{360.0f, 120.0f},0.0f,7.0f,WHITE);
-    DrawTextureEx(graphics.frog_003_select,{620.0f, 120.0f},0.0f,7.0f,WHITE);
-    DrawTextureEx(graphics.void_001_select,{100.0f, 300.0f},0.0f,7.0f,WHITE);
-    DrawTextureEx(graphics.void_002_select,{360.0f, 300.0f},0.0f,7.0f,WHITE);
-    DrawTextureEx(graphics.void_003_select,{620.0f, 300.0f},0.0f,7.0f,WHITE);
-
-    DrawTextureEx(graphics.locked_select,{620.0f, 480.0f},0.0f,7.0f,WHITE);
-
-    DrawTextureEx(graphics.playButton, {1000.0f, 600.0f},0.0f, 5.0f,WHITE);
-} */

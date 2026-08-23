@@ -18,6 +18,5 @@ struct Graphics{
 
 Graphics LoadGraphics();
 void DrawStartscreen();
-//void DrawCharSelection(Graphics graphics, std::vector<Character>& characters);
 
 void UnlaodGraphics(Graphics& Graphics);

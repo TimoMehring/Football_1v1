@@ -36,7 +36,12 @@ void DrawCharSelection(Graphics graphics, std::vector<Character>& characters){
     ClearBackground(BLUE);
 
     for(Character& character : characters){
-        DrawTextureEx(character.texture, character.selectPosition,0.0f,7.0f,WHITE);
+        if(character.status == CharSelectStatus::Locked){
+            DrawTextureEx(graphics.locked_select,character.selectPosition,0.0f,7.0f,WHITE);
+        }
+        else{
+            DrawTextureEx(character.texture, character.selectPosition,0.0f,7.0f,WHITE);
+        }
     }
 
     DrawTextureEx(graphics.playButton, {1000.0f, 600.0f},0.0f, 5.0f,WHITE);
