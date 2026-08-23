@@ -17,21 +17,25 @@ int main(void)
 
     while (!WindowShouldClose())    
     {
-        if(currentState == State::Startscreen){
-            UpdateStartscreen(currentState);
+        switch(currentState){
+            case State::Startscreen:
+                UpdateStartscreen(currentState);
+                break;
         }
 
         BeginDrawing();
 
         ClearBackground(ORANGE);
 
-        if(currentState == State::Startscreen){
-            DrawStartscreen();
-        }
-        else if(currentState == State::CharSelection){
-            DrawCharSelection();
-        }
+        switch(currentState){
+            case State::Startscreen:
+                DrawStartscreen();
+                break;
 
+            case State::CharSelection:
+                DrawCharSelection();
+                break;
+        }
 
 
            

@@ -2,7 +2,7 @@
 
 Graphics LoadGraphics(){
     Graphics graphics;
-
+    // CharSelection Textures
     graphics.frog_001_select = LoadTexture("assets/CharSelection/frog_001_select.png");
     graphics.frog_002_select = LoadTexture("assets/CharSelection/frog_002_select.png");
     graphics.frog_003_select = LoadTexture("assets/CharSelection/frog_003_select.png");
