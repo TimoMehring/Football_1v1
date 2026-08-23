@@ -9,7 +9,9 @@ int main(void)
 
     InitWindow(screenWidth, screenHeight, "Football 1v1");
 
-    SetTargetFPS(60);    
+    SetTargetFPS(60); 
+    
+    Graphics graphics = LoadGraphics();
     
     State currentState = State::Startscreen;
 
@@ -37,7 +39,7 @@ int main(void)
         EndDrawing();
         
     }
-
+    UnlaodGraphics(graphics);
     CloseWindow();        
 
     return 0;
