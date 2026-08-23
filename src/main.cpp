@@ -2,6 +2,7 @@
 #include "state.h"
 #include "graphics.h"
 #include "character.h"
+#include "charselection.h"
 
 int main(void)
 {
@@ -17,12 +18,18 @@ int main(void)
     std::vector<Character> characters = LoadCharacters(graphics);
     
     State currentState = State::Startscreen;
+    CharSelectStatus charSelectStatus = CharSelectStatus::Locked;
+    PlayButtonState playButtonState = PlayButtonState::Off;
 
     while (!WindowShouldClose())    
     {
         switch(currentState){
             case State::Startscreen:
                 UpdateStartscreen(currentState);
+                break;
+            
+            case State::CharSelection:
+                UpdateCharSelection(playButtonState, characters, currentState);
                 break;
         }
 
