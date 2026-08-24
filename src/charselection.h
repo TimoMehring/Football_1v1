@@ -9,4 +9,5 @@ enum class PlayButtonState{
     Jump // ready playbutton jumps to next State
 };
 
-void UpdateCharSelection(PlayButtonState& playButtonState, std::vector<Character>& characters, State& currentState);
+void UpdateCharSelection(PlayButtonState& playButtonState, std::vector<Character>& characters, State& currentState, CharacterID& selectedCharacter);
+void DrawBorderSelect(Graphics& graphics,int& currentFrameCharSelection,std::vector<Character>& characters, CharacterID selectedCharacter);

@@ -4,6 +4,7 @@ Graphics LoadGraphics(){
     Graphics graphics;
     // CharSelection Textures
     graphics.locked_select = LoadTexture("assets/CharSelection/locked_select.png");
+    graphics.border_select = LoadTexture("assets/CharSelection/border_select.png");
 
     graphics.frog_001_select = LoadTexture("assets/CharSelection/frog_001_select.png");
     graphics.frog_002_select = LoadTexture("assets/CharSelection/frog_002_select.png");
@@ -22,6 +23,7 @@ Graphics LoadGraphics(){
 void UnlaodGraphics(Graphics& graphics){
     // CharSelection Textures
     UnloadTexture(graphics.locked_select);
+    UnloadTexture(graphics.border_select);
 
     UnloadTexture(graphics.frog_001_select);
     UnloadTexture(graphics.frog_002_select);

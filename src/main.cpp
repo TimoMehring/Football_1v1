@@ -12,6 +12,9 @@ int main(void)
     InitWindow(screenWidth, screenHeight, "Football 1v1");
 
     SetTargetFPS(60); 
+
+    int currentFrameCharSelection = 0;
+    float charSelectTimer = 0.0f;
     
     Graphics graphics = LoadGraphics();
 
@@ -20,6 +23,7 @@ int main(void)
     State currentState = State::Startscreen;
     CharSelectStatus charSelectStatus = CharSelectStatus::Locked;
     PlayButtonState playButtonState = PlayButtonState::Off;
+    CharacterID selectedChar = CharacterID::None;
 
     while (!WindowShouldClose())    
     {
@@ -29,7 +33,15 @@ int main(void)
                 break;
             
             case State::CharSelection:
-                UpdateCharSelection(playButtonState, characters, currentState);
+                charSelectTimer += GetFrameTime();
+                if(charSelectTimer >= 0.5){
+                    currentFrameCharSelection++;
+                    if(currentFrameCharSelection >= 3){
+                        currentFrameCharSelection = 0;
+                    }
+                    charSelectTimer = 0.0f;
+                }
+                UpdateCharSelection(playButtonState, characters, currentState, selectedChar);
                 break;
         }
 
@@ -44,6 +56,9 @@ int main(void)
 
             case State::CharSelection:
                 DrawCharSelection(graphics,characters);
+                if(playButtonState == PlayButtonState::Ready){
+                    DrawBorderSelect(graphics, currentFrameCharSelection, characters, selectedChar);
+                }
                 break;
         }
 

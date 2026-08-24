@@ -9,6 +9,7 @@ enum class CharSelectStatus{
 };
 
 enum class CharacterID{
+    None,
     frog001,
     frog002,
     frog003,

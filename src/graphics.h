@@ -4,6 +4,7 @@
 
 struct Graphics{
     Texture2D locked_select;
+    Texture2D border_select;
 
     Texture2D frog_001_select;
     Texture2D frog_002_select;

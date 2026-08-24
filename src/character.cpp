@@ -24,7 +24,7 @@ std::vector<Character> LoadCharacters(Graphics& graphics){
     });
 
     characters.push_back({
-        CharacterID::void003, graphics.void_003_select, CharSelectStatus::Locked, {620.0f, 300.0f}
+        CharacterID::void003, graphics.void_003_select, CharSelectStatus::Unlocked, {620.0f, 300.0f}
     });
 
     return characters;
